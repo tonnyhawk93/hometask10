@@ -44,7 +44,7 @@ export const validateFieldN1 = allPass([isStarRed, isSquareGreen, isTriangleWhit
 
 export const validateFieldN2 = compose(greaterThenOne, length, filter(isColorGreen), values);
 
-export const validateFieldN3 = allPass([countRedEqualsBlue, lengthOfRedGreaterThenZero, lengthOfBlueGreaterThenZero])
+export const validateFieldN3 = allPass([countRedEqualsBlue])
 
 export const validateFieldN4 = allPass([isCircleBlue, isStarRed, isSquareOrange]);
 
