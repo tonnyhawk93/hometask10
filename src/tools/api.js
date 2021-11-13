@@ -34,7 +34,6 @@ export default class Api {
                 const urlInstance = new URL(url);
                 const host = urlInstance.host;
                 const pathname = urlInstance.pathname;
-        
                 const paramsFromUrl = Object.fromEntries(new URLSearchParams(urlInstance.search));
         
                 const query = {
