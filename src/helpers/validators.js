@@ -26,7 +26,9 @@ const lengthOfBlue = compose(length, filter(isColorBlue), values);
 const lengthOfOrange = compose(length, filter(isColorOrange), values);
 const greaterThenTwo = curry(lt)(2);
 const lengthOfGreenGTTwo = compose(greaterThenTwo, lengthOfGreen);
+const lengthOfGreenEQTwo = compose(equals(2), lengthOfGreen);
 const lengthOfRedGTTwo = compose(greaterThenTwo, lengthOfRed);
+const lengthOfRedEQ1 = compose(equals(1), lengthOfRed);
 const lengthOfBlueGTTwo = compose(greaterThenTwo, lengthOfBlue);
 const lengthOfOrangeGTTwo = compose(greaterThenTwo, lengthOfOrange);
 const greaterThenZero = curry(lt)(0);
@@ -48,7 +50,7 @@ export const validateFieldN4 = allPass([isCircleBlue, isStarRed, isSquareOrange]
 
 export const validateFieldN5 = anyPass([lengthOfGreenGTTwo,lengthOfRedGTTwo,lengthOfBlueGTTwo,lengthOfOrangeGTTwo])
 
-export const validateFieldN6 = allPass([lengthOfRedGreaterThenZero, lengthOfGreenGreaterThenOne, isTriangleGreen])
+export const validateFieldN6 = allPass([lengthOfRedEQ1, lengthOfGreenEQTwo, isTriangleGreen])
 
 export const validateFieldN7 = compose(all(isColorOrange), values);
 
